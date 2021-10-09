@@ -1,11 +1,3 @@
-//import javax.servlet.ServletException;
-//import javax.servlet.annotation.WebServlet;
-//import javax.servlet.http.HttpServlet;
-//import javax.servlet.http.HttpServletRequest;
-//import javax.servlet.http.HttpServletResponse;
-//import java.io.IOException;
-//import java.io.PrintWriter;
-
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
@@ -17,8 +9,12 @@ public class HelloWorldServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
+//        BONUS
+        String name = request.getParameter("name");
+        // if there is no name in the url query, it will return null, so then we set null equal to a string
+        if (name == null) name = "World";
         PrintWriter out = response.getWriter();
-        out.println("<h1>Hello, World!</h1>");
+        out.println("<h1> Hello, " + name + "!</h1>");
     }
 
 }
