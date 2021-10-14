@@ -5,7 +5,8 @@ import javax.servlet.http.*;
 
 @WebServlet(name = "HelloWorldServlet", urlPatterns = {"/hello"})
 public class HelloWorldServlet extends HttpServlet {
-
+    //to set a new name in the query string
+//    http://localhost:8080/hello?name=
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");

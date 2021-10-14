@@ -8,13 +8,11 @@ public class CountServlet extends HttpServlet {
 
     int count = 0;
 
-
-
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         //   BONUS: Allow the user to pass a parameter in the query string to reset the counter.
+        //http://localhost:8080/count?count=
         String passedCount = request.getParameter("count");
         // if there is no name in the url query, it will return null, so then we set null equal to a string
         if (passedCount != null) count = Integer.valueOf(passedCount);
