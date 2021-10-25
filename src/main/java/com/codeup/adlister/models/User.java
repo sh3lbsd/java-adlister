@@ -1,5 +1,7 @@
 package com.codeup.adlister.models;
 
+import com.codeup.adlister.util.Password;
+
 public class User {
     private long id;
     private String username;
@@ -18,7 +20,8 @@ public class User {
         this.id = id;
         this.username = username;
         this.email = email;
-        this.password = password;
+//        this.password = password;
+        setPassword(password);
     }
 
     public long getId() {
@@ -49,7 +52,10 @@ public class User {
         return password;
     }
 
+//    Make sure passwords are being hashed before they enter the database
     public void setPassword(String password) {
-        this.password = password;
+//        this.password = password;
+        this.password = Password.hash(password);
+
     }
 }
