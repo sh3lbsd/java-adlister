@@ -14,7 +14,7 @@
     <title>Post Form</title>
 </head>
 <body>
-
+<%@ include file="partials/navbar.jsp"%>
 <h1>Login Form</h1>
 <form action="show-post.jsp" method="POST">
     <label for="title">Title</label>
