@@ -25,6 +25,7 @@ public class CreateAdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 //        When a new ad is created, assign the user id of the logged in user to the ad
         User user = (User) request.getSession().getAttribute("user");
+;
         Ad ad = new Ad(
             1, // for now we'll hardcode the user id
                 user.getId(),
